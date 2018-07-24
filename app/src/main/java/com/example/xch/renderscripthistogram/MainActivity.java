@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 //        rgb2yuv();
 //        remapping();
 //        histo();
+        binary();
         }
 
 
@@ -51,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
         {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.img1);
             Bitmap outimage = histogramEqualization.histogramEqualization(bitmap,getApplicationContext());
+            imageView.setImageBitmap(outimage);
+        }
+
+        public void binary()
+        {
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.img1);
+            Bitmap outimage = binary.binayhandle(getApplicationContext(),bitmap,0.5f);
             imageView.setImageBitmap(outimage);
         }
 }
